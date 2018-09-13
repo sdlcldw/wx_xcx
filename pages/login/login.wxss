@@ -1,0 +1,41 @@
+.login{
+    margin-top: 50rpx;
+}
+.input-view{
+    width:650rpx;
+}
+.dl_view{
+    width:650rpx;
+}
+.login-input{
+    margin: 20rpx;
+    border: 1rpx solid #35B6DD;
+    border-radius: 5px;
+    background: #fcfcfc;   
+    padding: 6px 10px; 
+}
+.dl_button{
+    margin:50rpx 0;
+}
+.sq_button{
+    margin:50rpx 0;
+}
+/* .kb{
+    width:100%;
+    height: 10px;
+    background: #F0F4F3;    
+} */
+.sm{
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    margin-top: 5px; 
+    width: 100%;
+    /* height: 80px; */
+    background: #35B6DD;
+    color: #ffffff;
+    font-size: 15px;
+}
+.text{
+    width: 95%;
+}

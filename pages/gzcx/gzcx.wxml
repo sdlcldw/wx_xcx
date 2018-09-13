@@ -1,0 +1,401 @@
+<!--logs.wxml-->
+<view class="container">
+    <loading hidden="{{hiddenLoading}}">正在加载</loading>
+    <view class="xxk-top">
+        <view bindtap="htgz" class="xxk-top-htgz {{!ifhtgz ? 'xxk-wxz' :'xxk-active'}}">
+            合同工资
+            <view class="sjx" style="display:{{!ifhtgz ? 'none' : 'block'}}"></view>
+        </view>
+        <view bindtap="tggz" class="xxk-top-tggz {{ifhtgz ? 'xxk-wxz' :'xxk-active'}}">
+            套改工资
+            <view class="sjx" style="display:{{ifhtgz ? 'none' : 'block'}}"></view>
+        </view>
+    </view>
+
+    <view wx:if="{{ifhtgz}}" class="htgz xzgz">
+        <view class="gzcx_rqxz">
+            <view class="htgz_sm">
+                共有 {{years.length}} 条工资记录,请选择查询月份。
+            </view>
+            <view class="gzcx_rqxz_cx">
+                <picker-view indicator-style="height: 22px;" style="width: 33%;font-size:19px;" value="{{value}}" bindchange="bindChange">
+                    <picker-view-column>
+                        <view wx:for="{{years}}" style="line-height: 20px">{{item.riqi}}</view>
+                    </picker-view-column>
+                </picker-view>
+                <view class="htgz_cx">
+                    <button class="htgz_button" type="primary" bindtap="htgz_cx" loading="{{htgzcx_loading}}">查 询</button>
+                </view>
+            </view>
+        </view>
+        <view class="htgz_xd" style="display:{{ifhtgz_xd ? 'block': 'none' }}">
+            <view class="htgz_tabel">
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_top cell_left">
+                        姓名
+                    </view>
+                    <view class="htgz_tabel_cell cell_top cell_right">
+                        {{htgz_xd.username}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        月份
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.riqi}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        基本工资
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.jbgz}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        班主任费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.bzrf}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        课时工资
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.ksgz}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        考务费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kwf}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        校龄
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.xl}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        其它
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.qt}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        全勤奖
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.qqj}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell yfgz cell_left">
+                        应发工资
+                    </view>
+                    <view class="htgz_tabel_cell yfgz cell_right">
+                        {{htgz_xd.yfgz}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣考勤
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kkq}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣工会费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kghf}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣保险
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kbx}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣公积金
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kgjj}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣个税
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kgs}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        其它扣款
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.qtkk}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣款合计
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{htgz_xd.kkhj}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell sfgz cell_left">
+                        实发工资
+                    </view>
+                    <view class="htgz_tabel_cell sfgz cell_right">
+                        {{htgz_xd.sfgz}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+
+
+    <view wx:else="{{ifhtgz}}" class="tggz">
+        <view class="gzcx_rqxz">
+            <view class="htgz_sm">
+                共有 {{tggz_yfs.length}} 条工资记录,请选择查询月份。
+            </view>
+            <view class="gzcx_rqxz_cx">
+                <picker-view indicator-style="height: 22px;" style="width: 33%;font-size:19px;" value="{{value}}" bindchange="bindChange">
+                    <picker-view-column>
+                        <view wx:for="{{tggz_yfs}}" style="line-height: 20px">{{item.riqi}}</view>
+                    </picker-view-column>
+                </picker-view>
+                <view class="htgz_cx">
+                    <button class="htgz_button" type="primary" bindtap="tggz_cx" loading="{{tggzcx_loading}}">查 询</button>
+                </view>
+            </view>
+        </view>
+        <view class="htgz_xd" style="display:{{iftggz_xd ? 'block': 'none' }}">
+            <view class="htgz_tabel">
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_top cell_left">
+                        姓名
+                    </view>
+                    <view class="htgz_tabel_cell cell_top cell_right">
+                        {{tggz_xd.username}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        月份
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.riqi}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        岗位工资
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.gwgz}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        薪级工资
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.xjgz}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        三次职补
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.sczb}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        地福补岗补
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.dfbgb}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        聊城岗位津贴
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.lcgwjt}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        新增地方补贴
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.xzdfbt}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        新增绩效
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.xzjx}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        住房补贴
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.zfbt}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        课时费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.ksf}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        考务费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.kwf}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        班主任费
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.bzrf}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        其它
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.qita}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        全勤奖
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.qqj}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left yfgz">
+                        应发合计
+                    </view>
+                    <view class="htgz_tabel_cell cell_right yfgz">
+                        {{tggz_xd.yfhj}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣考勤
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.kkq}}
+
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                    <view class="htgz_tabel_cell cell_left">
+                        扣保险
+                    </view>
+                    <view class="htgz_tabel_cell cell_right">
+                        {{tggz_xd.kbx}}
+                    </view>
+                </view>
+                <view class="htgz_tabel_row">
+                        <view class="htgz_tabel_cell cell_left">
+                            扣工会费
+                        </view>
+                        <view class="htgz_tabel_cell cell_right">
+                            {{tggz_xd.kghf}}
+                        </view>
+                </view>
+                <view class="htgz_tabel_row">
+                        <view class="htgz_tabel_cell cell_left">
+                            扣公积金
+                        </view>
+                        <view class="htgz_tabel_cell cell_right">
+                            {{tggz_xd.kgjj}}
+                        </view>
+                </view>
+                <view class="htgz_tabel_row">
+                        <view class="htgz_tabel_cell cell_left">
+                            扣个税
+                        </view>
+                        <view class="htgz_tabel_cell cell_right">
+                            {{tggz_xd.kgs}}
+                        </view>
+                </view>
+                <view class="htgz_tabel_row">
+                        <view class="htgz_tabel_cell cell_left">
+                            扣款合计
+                        </view>
+                        <view class="htgz_tabel_cell cell_right">
+                            {{tggz_xd.kkhj}}
+                        </view>
+                </view>
+                <view class="htgz_tabel_row">
+                        <view class="htgz_tabel_cell sfgz cell_left">
+                            实发工资
+                        </view>
+                        <view class="htgz_tabel_cell sfgz cell_right">
+                            {{tggz_xd.sfgz}}
+                        </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

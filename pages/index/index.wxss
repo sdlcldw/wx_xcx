@@ -1,0 +1,27 @@
+.row-container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.tb-view {
+    width: 180rpx;
+    text-align: center;
+}
+
+.gn-tb {
+    width: 50px;
+    height: 50px;
+}
+
+.gn-text {
+    display: block;
+    margin-top: -10px;
+    font-size: 14px;
+    color: #777777;
+}
+
+.top-row {
+    margin-top: 20px;
+}

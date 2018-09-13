@@ -1,0 +1,57 @@
+page{
+  display: block;  
+  min-height: 100%;  
+  background-color: #f1f1f1;
+}
+.content{
+  width: 100%;
+}
+.mp_jbxx {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
+  background-color: #ffffff;
+}
+.mp_image{
+  width: 55px;
+        height: 55px;
+        margin: 3px;
+        margin-left: 20px;
+        border-radius: 50%;
+}
+.name_text{
+  margin-left: 30px;
+  font-size: 16px;
+}
+.sex_text{
+  margin-left: 30px;
+  font-size: 14px;
+}
+.mp_jbxx_text{
+  display: flex;
+  flex-direction:column; 
+}
+.bm_text{
+  font-size: 14px;
+  margin-top: 20px;
+  margin-left: 30px;
+}
+.phone_view,.phone_d_view,.phone_bg_view,.email_view{
+  width: 100%;
+  display: flex;
+  flex-direction:row;
+  margin-top: 5px;
+  height: 40px;
+  background-color: #ffffff;
+  font-size: 14px;
+}
+.xm_name{
+  width: 80px;
+  margin: 10px 20px;
+}
+.xm_data{
+  width: 100px;
+  margin: 10px;
+}

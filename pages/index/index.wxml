@@ -1,0 +1,23 @@
+<!--logs.wxml-->
+<loading wx:if="{{ifloading}}" >正在加载</loading>
+
+<block wx:else>
+<view class="container">
+    <view class="row-container top-row">
+        <view class="tb-view">
+            <image bindtap="gzcx" class="gn-tb" src="../../images/gzcx.png"></image>
+                <text class="gn-text">工资查询</text>
+        </view>
+        <view class="tb-view">
+                <image bindtap="txl" class="gn-tb" src="../../images/txl.png"></image>
+                <text class="gn-text">通讯录</text>
+        </view>
+        <view class="tb-view">
+            
+        </view>
+        <view class="tb-view">
+           
+        </view>
+    </view>
+</view>
+</block>

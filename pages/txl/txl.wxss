@@ -1,0 +1,93 @@
+/* 搜索框css */
+.page_row{  
+    display: flex;  
+  }
+.search{  
+    width: 100%;  
+  }  
+  .search_arr {  
+    border: 1px solid #d0d0d0;  
+    border-radius: 10rpx;  
+    margin:20rpx;  
+  }  
+  .search_arr input{ 
+    margin-left: 60rpx;  
+    height: 60rpx;  
+    border-radius: 5px;
+    font-size: 16px;  
+  }
+  .searchcion {  
+    margin: 10rpx 10rpx 10rpx 10rpx;  
+    position: absolute;  
+    left:25rpx;  
+    z-index: 2;  
+    width: 20px;  
+    height: 20px;  
+    text-align: center;  
+  }  
+    /* 联系人列表css */
+    .list-text {
+        font-size: 16px;
+        margin-left: 5px;
+      }
+      .list-view-groups {
+        display: flex;
+        height: 40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 1px solid lightgray;
+      }
+      .list-image {
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        transition:transform 0.3s;
+      }
+      .list-image-active{
+        margin-left: 5px;
+        width: 20px;
+        height: 20px;
+        transition:transform 0.3s;          
+        transform:rotate(90deg);
+      }
+      .list-view-count {
+        width: 10%;
+      }
+      .list-view-image {
+        width: 10%;
+      }
+      .list-view-text {
+        width: 80%;
+      }
+      .list-view-friend {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: left;
+        border-bottom: 1px solid lightgray;
+      }
+      .list-friend-image {
+        width: 45px;
+        height: 45px;
+        margin: 3px;
+        margin-left: 10px;
+        border-radius: 50%;
+      }
+      .list-friend-text {
+        width: 80px;
+        font-size: 16px;
+        margin-left: 5px;
+      }
+      .sjh-view{
+        display: flex;
+        flex-direction:column;        
+      }
+      .list-friend-sj,.list-friend-sjdh{
+        font-size: 14px;
+        color:lightgray;
+      }
+      .list-view-friend:hover {
+        border-left: 3px solid lightgreen;
+        border-right: 3px solid lightcoral;
+      }

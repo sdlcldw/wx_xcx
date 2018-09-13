@@ -1,0 +1,56 @@
+<loading wx:if="{{ifloading}}" >正在加载</loading>
+<block wx:else="{{ifloading}}">
+<view class='page_row'>  
+  <view class="search">  
+    <view class="df search_arr">  
+      <icon class="searchcion" size='20' type='search'></icon>  
+      <input class="" placeholder="请输入关键字" bindinput="searchInput"/>  
+    </view>
+  </view>
+</view>
+  <block wx:if="{{!ifsearch}}">
+<block wx:for="{{groups}}" wx:key="id" wx:for-index="idxgrp" wx:for-item="groups">
+  <view class="list-view-groups"   id="{{groups.id}}" bindtap="groupclick">
+    <view class="list-view-image">
+        <image class=" {{groups.hidden ? 'list-image' :'list-image-active'}}" id="image{{groups.id}}" src="../../images/arrow-right.png"></image>
+    </view>
+    <view class="list-view-text">
+      <text class="list-text" id="name{{groups.id}}">{{groups.name}}</text>
+    </view>
+    <view class="list-view-count">
+      <text class="list-text-count" id="count{{groups.id}}">({{groups.count}})</text>
+    </view>
+  </view>
+  <view class="list-view-friends" hidden="{{groups.hidden}}" id="friendlist{{groups.id}}">
+    <block wx:for="{{friends}}" wx:key="id" wx:for-index="idxfrd" wx:for-item="friends">
+      <block wx:if="{{friends.groupid==groups.id}}">
+        <view class=" list-view-friend " id="{{groups.id}}{{friends.id}}" data-sj="{{friends}}" data-bm="{{groups.name}}" bindtap="mpxq">
+          <image class="list-friend-image " src="{{friends.sex=='女' ? '../../images/tx_0.png' :'../../images/tx_1.png'}}"></image>
+          <text class="list-friend-text ">{{friends.username}}</text>
+          <view class="sjh-view">
+          <text class="list-friend-sj">手机号：{{friends.phone}}</text>
+          <text class="list-friend-sjdh">网内号：{{friends.phone_d}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+  </view>
+</block>
+</block>
+  <block wx:else="{{!ifsearch}}">
+  <block wx:for="{{groups}}" wx:key="id" wx:for-index="idxgrp" wx:for-item="groups">
+  <block wx:for="{{searchData}}" wx:key="id" wx:for-index="idxfrd" wx:for-item="datas">
+      <block wx:if="{{datas.groupid==groups.id}}">
+    <view class=" list-view-friend " id="{{groups.id}}{{datas.id}}" data-sj="{{datas}}" data-bm="{{groups.name}}" bindtap="mpxq">
+      <image class="list-friend-image " src="{{datas.sex=='女' ? '../../images/tx_0.png' :'../../images/tx_1.png'}}"></image>
+      <text class="list-friend-text ">{{datas.username}}</text>
+      <view class="sjh-view">
+      <text class="list-friend-sj">手机号：{{datas.phone}}</text>
+      <text class="list-friend-sjdh">网内号：{{datas.phone_d}}</text>
+      </view>
+    </view>
+  </block>
+  </block>
+  </block>
+</block>
+</block>

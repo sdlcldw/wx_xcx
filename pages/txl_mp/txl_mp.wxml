@@ -1,0 +1,33 @@
+<view class="content">
+
+
+  <view class="mp_jbxx">
+    <image class="mp_image" src="{{mp_data.sex=='女' ? '../../images/tx_0.png' :'../../images/tx_1.png'}}"></image>
+    <view class="mp_jbxx_text">
+      <view>
+        <text class="name_text ">{{mp_data.username}}</text>
+        <text class="sex_text">{{mp_data.sex}}</text>
+      </view>
+      <text class="bm_text">{{mp_data.bm}}</text>
+    </view>
+  </view>
+
+  <view class="phone_view" data-phone="{{mp_data.phone}}" bindtap="call">
+    <view class="xm_name">手机号</view>
+    <view class="xm_data">{{mp_data.phone}}</view>
+  </view>
+  <view class="phone_d_view" data-phone="{{mp_data.phone_d}}" bindtap="call_d">
+    <view class="xm_name">网内号</view>
+    <view class="xm_data">{{mp_data.phone_d}}</view>
+  </view>
+  <view class="phone_bg_view" data-phone="{{mp_data.phone_bg}}" bindtap="call_bg">
+    <view class="xm_name">办公电话</view>
+    <view class="xm_data">{{mp_data.phone_bg}}</view>
+  </view>
+  <view class="email_view">
+    <view class="xm_name">邮箱</view>
+    <view class="xm_data">{{mp_data.email}}</view>
+  </view>
+
+
+</view>

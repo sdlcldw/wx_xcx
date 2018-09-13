@@ -1,0 +1,41 @@
+{
+  "pages":[   
+    "pages/index/index",        
+    "pages/txl/txl",
+    "pages/txl_mp/txl_mp", 
+    "pages/my/my",
+    "pages/my_xg/my_xg",
+    "pages/gzcx/gzcx",    
+    "pages/login/login"
+  ],
+  "window":{
+    "backgroundTextStyle":"white",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "聊城育才学校",
+    "navigationBarBackgroundColor": "#35B6DD",
+    "backgroundColor": "#35B6DD",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#b1b1b1",
+    "selectedColor": "#35B6DD",
+    "borderStyle": "#ffffff",
+    "backgroundColor": "#ffffff",
+   
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "功能",
+        "iconPath":"images/gn-1.png",
+        "selectedIconPath":"images/gn-2.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/wd-1.png",
+        "selectedIconPath": "images/wd-2.png"
+      }
+    ]
+  },
+  "debug": true
+}

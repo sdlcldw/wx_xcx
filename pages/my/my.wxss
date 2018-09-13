@@ -1,0 +1,107 @@
+.container {
+  background: #F0F4F3;
+}
+.user {
+    width: 725rpx;
+    background: #35B6DD;
+    padding: 30rpx 25rpx 30rpx 0;
+    margin: 15rpx 0 0 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #dcdcdc;
+    box-shadow: 0 2px 5px #eeeeee;
+  }
+  .user .userinfo-avatar{
+    flex: 1;
+    display: inline-block;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 80rpx;
+  }
+  .user .user-info{
+    flex: 5;
+    text-align: left;
+  }
+  .user .user-info text{
+    display: block;
+  }
+  .user .user-info .userinfo-nickname{
+    padding: 8rpx 0 10rpx 0;
+    font-size: 30rpx;
+    color:white;
+  }
+  .user .user-info .edit{
+    font-size: 30rpx;
+    color:#e6e6e6;
+    line-height: 34rpx;
+  }
+  
+  .my{
+    margin: 15rpx 0 0 0;
+    border-top: solid 1px #ebebeb;
+    border-bottom: solid 2px #ebebeb;
+  }
+  .my .my-item{
+    width: 750rpx;
+    background: #ffffff;
+    padding: 0
+  }
+  .my .my-item .myitem-icon{
+    flex: 1;
+  }
+  .my .my-item .myitem-icon image{
+    width: 45rpx;
+    height: 45rpx;
+    padding: 37.5rpx 0;
+  }
+  .my .my-item .myitem-name{
+    flex: 5;
+    text-align: left;
+    font-size: 34rpx;
+    color: #6d6d6d;
+    line-height: 60rpx;
+    padding: 30rpx 0;
+    border-bottom: solid 1px #ebebeb;
+  }
+  .my .my-item:last-child .myitem-name{
+    border-bottom: none;
+  }
+  .flex-item{
+    flex-grow: 1;
+    text-align: center;
+  }
+  .flex-wrp{
+    display: flex;
+  }  
+  .container .feed-item .feed-source .avatar{
+    position: relative;
+    display: inline-block;
+  }
+  .container .feed-item .feed-source a{
+    display: inline-block;
+    height: 40rpx;
+  }
+  .container .feed-item .feed-source .avatar image{
+    /*position: absolute;*/
+    display: inline-block;
+    width: 45rpx;
+    height: 45rpx;
+    border-radius: 45rpx;
+    top: 10rpx;
+    vertical-align: middle;
+  }
+  .container .feed-item .feed-source text{
+    /*position: absolute;*/
+    display: inline-block;
+    height: 40rpx;
+    line-height: 40rpx;
+    vertical-align: middle;
+    margin: 0 0 0 15rpx;
+    color: #a0acac;
+    font-size: 26rpx;
+  }
+  .exit{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  border-radius: 0;
+  }

@@ -1,0 +1,10 @@
+<loading wx:if="{{ifloading}}">正在加载</loading>
+<block wx:else="{{ifloading}}">
+  <view class="input_view">
+      <image src="../../images/{{xm}}.png"></image>
+    <input type="text" value="{{inputvalue}}" bindinput="bindinput" />
+  </view>
+  <view>
+    <button class="qrxg" type="primary" loading="{{loading}}" bindtap="qrxg"> 确认修改 </button>
+  </view>
+</block>

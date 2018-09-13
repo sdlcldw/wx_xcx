@@ -1,0 +1,26 @@
+<view class="container login-contai">
+    <view class="sq" wx:if="{{!sq}}">
+        <view class="sm">
+            <view class="text">您还未授权获取微信公开信息，请先点击授权按钮，再执行登录操作。</view>
+        </view>
+        <view class="sq_button">
+            <button type="primary" bindgetuserinfo="onGotUserInfo" open-type="getUserInfo">同意授权登录</button>
+        </view>
+    </view>
+    <block wx:else="{{!sq}}">
+        <view class="sm">
+            <view class="text">请输入要登录的电脑版办公平台账号，登陆后将关联至您的微信账号，可使用微信快捷登录（免登录）办公平台。</view>
+        </view>
+        <view class="login">
+            <view class="input-view">
+                <input class="login-input" name="username" type="text" placeholder="账号" bindinput="usernameInput" />
+            </view>
+            <view class="input-view">
+                <input class="login-input" name="password" password placeholder="密码" bindinput="passwordInput" />
+            </view>
+            <view class="dl_view">
+                <button class="dl_button" type="primary" bindtap="login" loading="{{loading}}">绑定并登录</button>
+            </view>
+        </view>
+    </block>
+</view>
