@@ -13,7 +13,8 @@
                 <text class="gn-text">通讯录</text>
         </view>
         <view class="tb-view">
-            
+            <image bindtap="dc" class="gn-tb" src="../../images/fan.png"></image>
+            <text class="gn-text">订 餐</text>
         </view>
         <view class="tb-view">
            

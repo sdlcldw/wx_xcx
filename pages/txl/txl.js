@@ -55,7 +55,6 @@ Page({
       let data = [];
       for (var i = 0, len = friends.length; i < len; ++i) {
         if (friends[i].username.indexOf(value) != -1) {
-          console.log(friends[i])
           data.push(friends[i])
         }
       }

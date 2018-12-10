@@ -21,7 +21,6 @@ Page({
         })
       }
     }
-   
   },
   iflogint: function () {
     new Promise(resolve => {
@@ -107,9 +106,15 @@ Page({
     })
   },
   txl:function(){
-    console.log('通讯录按钮了')
+    console.log('通讯录按钮点击')
     wx.navigateTo({
       url: '../txl/txl'
+    })
+  },
+  dc:function(){
+    console.log('订餐按钮点击')
+    wx.navigateTo({
+      url: '../dc/dc'
     })
   }
 })

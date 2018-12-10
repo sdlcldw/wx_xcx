@@ -1,0 +1,50 @@
+<loading wx:if="{{ifloading}}" >正在加载</loading>
+<block wx:else="{{ifloading}}">
+
+<view class="dc_jrcp">
+    <view class="dc_sj_h">今日菜谱：{{jrcd.cd}}</view>
+    <view class="dc_sj_h">价格标准：{{jrcd.jrcj}}元</view>
+</view>
+
+<view class="fjx"></view>
+
+<view class="dc_sj">
+<view class="dc_sj_h"><view class="sj_xm">今日订餐人数：</view><view class="sj_data">{{jrdcrs}}人<text class="dc_qs">(10人起送)</text></view></view>
+<view class="dc_sj_h"><view class="sj_xm">订餐时间：</view><view class="sj_data">{{dcsj.kssj}}—{{dcsj.jssj}}</view></view>
+<view class="dc_sj_h"><view class="sj_xm">订餐倒计时：</view><view class="sj_data">{{djs}}</view></view>
+<view class="dc_sj_h">
+    <view class="sj_xm">我的订餐状态：</view>
+    <view wx:if="{{ifzt_a}}" class="sj_data dc_zt_a">{{mydczt}}；</view>
+    <view wx:if="{{ifzt_b}}" class="sj_data dc_zt_b">{{mydczt}}；</view>
+    <view wx:if="{{ifzt_c}}" class="sj_data dc_zt_c">{{mydczt}}；</view>
+</view>
+</view>
+<view class="fjx"></view>
+<view class="dc_sj">
+    <view class="dc_sj_h"><view class="sj_xm">我的订餐次数：</view><view class="sj_data">{{mylsdc}}</view></view>
+    <view class="dc_sj_h"><view class="sj_xm">累计订餐人次：</view><view class="sj_data">{{lsdcrs}}次</view></view>
+</view>
+
+<view class="fjx"></view>
+
+<view class="button_view">
+<view wx:if="{{ifdc}}" class="dc_click" hover-class="dc_click_an" bindtap="dc_click"><view class="an_view">订 餐</view></view>
+<view wx:if="{{ifqx}}" class="qx_click" hover-class="qx_click_an" bindtap="qx_click"><view class="an_view">取 消</view></view>
+<view wx:if="{{ifyjs}}" class="yjs_click" hover-class="qx_click_an"><view class="an_view">已结束</view></view>
+<view wx:if="{{ifwks}}" class="wks_click" hover-class="qx_click_an"><view class="an_view">未开始</view></view>
+<view wx:if="{{ifyqx}}" class="yqx_click" hover-class="qx_click_an"><view class="an_view">已取消</view></view>
+</view>
+
+<view class="button_d">
+ <view bindtap="dc_cw" class="button_d_a" hover-class="button_d_an">
+    <text> 财务</text>
+ </view>
+ <view bindtap="dc_ct" class="button_d_b" hover-class="button_d_an">
+<text>餐厅</text> 
+</view>
+<view bindtap="dc_gly" class="button_d_c" hover-class="button_d_an">
+<text>管理员</text>
+</view>
+</view>
+
+</block>

@@ -1,0 +1,6 @@
+<loading wx:if="{{ifloading}}" >正在加载</loading>
+<block wx:else="{{ifloading}}">
+
+
+
+</block>
